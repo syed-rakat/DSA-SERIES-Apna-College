@@ -1,17 +1,9 @@
-#include<bits/stdc++.h>
-using namespace std;
-
-int main()
-{
-    string s = "abcabacjksah";
-    string part = "ab";
-    
-    // Continue until "part" is no longer found in "s"
-    while (s.length() > 0 && s.find(part) < s.length())
-    {
-        s.erase(s.find(part), part.length()); // Erase the first occurrence of "part"
+class Solution {
+public:
+    string removeOccurrences(string s, string part) {
+        while (s.find(part) != string::npos) { // Check if 'part' exists in 's'
+            s.erase(s.find(part), part.length()); // Remove the first occurrence of 'part'
+        }
+        return s;
     }
-    
-    cout << s;  // Output the modified string
-    return 0;
-}
+};
